@@ -1,0 +1,9 @@
+digraph clan_graph {
+	L [label=owlstar]
+	D [label=MouseWhisker]
+	W42 [label=nightwing]
+	W43 [label=cloudheart]
+		L -> D
+		D -> W42
+		D -> W43
+}

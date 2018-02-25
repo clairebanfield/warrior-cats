@@ -1,0 +1,68 @@
+
+
+.page-header {
+    background-color: #730F11;
+    margin-top: 0;
+	margin-bottom: -1px;
+    padding: 20px 20px 20px 40px;
+	font-family: 'Lobster', cursive;
+	color: #ffffff;
+}
+
+.page-body {
+    padding-left: 30px;
+	padding-top: 30px;
+	background-image: url("../images/giphy.gif");
+	background-repeat: no-repeat;
+    background-position: center top;
+	background-size: 100% 100%;
+    background-attachment: fixed;
+	color: #ffffff;
+	min-height: 100%;
+}
+
+table, th, td {
+   border: 2px solid white;
+   padding: 7px;
+   text-align: left;
+   font-size: 20px;
+   color: #ffffff;
+
+}
+
+.right {
+    float: right;
+    width: 400px;
+}
+.left {
+    float: left;
+    width: 400px;
+}
+
+h2 {
+	color: #ffffff;
+}
+
+h2 a {
+	color: #ffffff;
+}
+
+}
+label, input, select {
+    display: block;
+	margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 20px;
+}
+
+input {
+	color: #000000;
+}
+
+select {
+	color: #000000;
+}
+
+html, body {height: 100%;}

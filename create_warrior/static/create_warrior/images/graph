@@ -1,0 +1,20 @@
+digraph "clan-graph" {
+	graph [bgcolor=transparent]
+	node [fillcolor=white style=filled]
+	edge [color=white fillcolor=white]
+		L [label=NightStar]
+		D [label=ViperFang]
+		W133 [label=GriffonRoar]
+		W134 [label=GreyStripe]
+		W135 [label=RainDapple]
+		W136 [label=ShadowPelt]
+		W137 [label=SmallClaw]
+		W138 [label=DawnFlight]
+			L -> D
+			D -> W133
+			D -> W134
+			D -> W135
+			D -> W136
+			D -> W137
+			D -> W138
+}

@@ -1,0 +1,50 @@
+{% load staticfiles %}
+<html>
+<head>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+<link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{% static 'create_warrior/css/site.css' %}">
+<title>Create a Clan!</title>
+</head>
+<body>
+<div class="page-header">
+<h1>Create Clan!</h1>
+</div>
+<div class="page-body">
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="/create_warrior/clans/add/" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+
+<!--
+<label for="name">Name:</label>
+<input type="text" name="name"/>
+<br />
+<br />
+
+
+
+<label for="habitat">Habitat:</label>
+<select name="habitat">
+	<option value="hills">Hills</option>
+	<option value="pines">Pines</option>
+	<option value="gorge">Gorge</option>
+	<option value="moor">Moor</option>
+	<option value="river">River</option>
+	<option value="lake">Lake</option>
+	<option value="forest">Forest</option>
+</select>
+<br />
+<br /><-->
+<input type="submit" value="Create!" />
+</form>
+</br>
+</br>
+Create: <a href="/create_warrior/cats/add/">Cat</a> | <a href="/create_warrior/clans/add/">Clan</a></br>
+List: <a href="/create_warrior/list/">Cats</a></br>
+Other: <a href="/create_warrior/">Home</a></br>
+</div>
+</body>
+</html>
