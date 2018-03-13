@@ -51,7 +51,7 @@ class Clan(models.Model):
 
 class Cat(models.Model):
     name = models.CharField(max_length=20)
-    photo = models.ImageField(upload_to="cats",null=True, blank=True)
+    photo = models.ImageField(upload_to="cats/",null=True, blank=True)
     age = models.IntegerField(default=12)
     clan = models.ForeignKey(Clan,  on_delete=models.CASCADE)
     position = models.CharField(max_length=3,

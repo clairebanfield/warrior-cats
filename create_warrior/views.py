@@ -17,19 +17,10 @@ def index(request):
 
 def addcat(request):
     if request.method == 'POST':
-        form = CatForm(request.POST)
+        form = CatForm(request.POST, request.FILES)
+        template = loader.get_template('create_warrior/save_success.html')
         if form.is_valid():
-        #Process the Data
-            name = form.cleaned_data['name']
-            age = form.cleaned_data['age']
-            clan = form.cleaned_data['clan']
-            position = form.cleaned_data['position']
-            newcat = Cat(name=name,
-                         age=age,
-                         clan=clan,
-                         position=position)
-            newcat.save()
-            template = loader.get_template('create_warrior/save_success.html')
+            form.save()       
             target = 'Cat'
             context = {'target': target,}
             return HttpResponse (template.render(context,request))
@@ -43,7 +34,7 @@ def editcat(request, name):
     cat = []
     cat = Cat.objects.filter(name=name)[0]        
     if request.method == 'POST':
-        form = CatForm(request.POST, instance=cat)                    
+        form = CatForm(request.POST, request.FILES, instance=cat)                    
         form.save()
         template = loader.get_template('create_warrior/save_success.html')
         target = 'Cat'
