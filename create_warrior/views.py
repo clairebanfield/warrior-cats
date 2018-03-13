@@ -31,20 +31,21 @@ def addcat(request):
         return HttpResponse(template.render(context, request))
 
 def editcat(request, name):
-    cat = []
-    cat = Cat.objects.filter(name=name)[0]        
-    if request.method == 'POST':
-        form = CatForm(request.POST, request.FILES, instance=cat)                    
-        form.save()
-        template = loader.get_template('create_warrior/save_success.html')
-        target = 'Cat'
-        context = {'target': target,}
-        return HttpResponse (template.render(context,request))
-    else:
-        form = CatForm(instance=cat)                    
-        template = loader.get_template('create_warrior/editcat.html')
-        context = {'form': form, 'cat': cat}
-        return HttpResponse(template.render(context, request))    
+	cat = []
+	cat = Cat.objects.filter(name=name)[0]
+	if request.method == 'POST':
+		form = CatForm(request.POST, request.FILES, instance=cat)
+		template = loader.get_template('create_warrior/save_success.html')
+		if form.is_valid():
+			form.save()
+			target = 'Cat'
+			context = {'target': target,}
+			return HttpResponse (template.render(context,request))
+	else:
+		form = CatForm(instance=cat)
+		template = loader.get_template('create_warrior/editcat.html')
+		context = {'form': form, 'cat': cat}
+		return HttpResponse(template.render(context, request))    
 
 def deletecat(request, name):
     cat = []
